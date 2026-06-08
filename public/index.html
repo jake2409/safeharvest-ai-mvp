@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeHarvest AI</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">🛡️</div>
+      <div>
+        <h1>SafeHarvest AI</h1>
+        <p>Risco de contaminação alimentar</p>
+      </div>
+    </div>
+
+    <nav>
+      <a class="active">Visão Geral</a>
+      <a>Mapa de Risco</a>
+      <a>Alertas</a>
+      <a>Análises</a>
+      <a>Relatórios</a>
+    </nav>
+
+    <div class="user">
+      <strong>Administrador</strong>
+      <span>Global Solution MVP</span>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div>
+        <h2>Visão Geral</h2>
+        <p>Dados climáticos em tempo real via Open-Meteo</p>
+      </div>
+
+      <button id="reloadButton">Atualizar dados</button>
+    </header>
+
+    <section class="cards">
+      <article class="card">
+        <span>Áreas monitoradas</span>
+        <strong id="totalAreas">--</strong>
+      </article>
+      <article class="card danger">
+        <span>Alto risco</span>
+        <strong id="highRisk">--</strong>
+      </article>
+      <article class="card warning">
+        <span>Médio risco</span>
+        <strong id="mediumRisk">--</strong>
+      </article>
+      <article class="card success">
+        <span>Baixo risco</span>
+        <strong id="lowRisk">--</strong>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="panel risk-gauge">
+        <h3>Índice Geral de Risco</h3>
+        <div class="gauge">
+          <div id="gaugeValue">--</div>
+          <span>/100</span>
+        </div>
+        <p id="gaugeText">Calculando...</p>
+      </article>
+
+      <article class="panel map-panel">
+        <div class="panel-header">
+          <h3>Mapa de Risco</h3>
+          <small>Representação visual do MVP</small>
+        </div>
+
+        <div id="riskMap" class="risk-map"></div>
+
+        <div class="legend">
+          <span><i class="dot high"></i> Alto</span>
+          <span><i class="dot medium"></i> Médio</span>
+          <span><i class="dot low"></i> Baixo</span>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h3>Fatores de Risco</h3>
+        <div id="factors" class="factors"></div>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel">
+        <h3>Alertas</h3>
+        <div id="alerts" class="alerts"></div>
+      </article>
+
+      <article class="panel">
+        <h3>Regiões monitoradas</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Região</th>
+                <th>Cultura</th>
+                <th>Temp.</th>
+                <th>Umidade</th>
+                <th>Chuva 7d</th>
+                <th>NDVI</th>
+                <th>Turbidez</th>
+                <th>Risco</th>
+              </tr>
+            </thead>
+            <tbody id="regionsTable"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

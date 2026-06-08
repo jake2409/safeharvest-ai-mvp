@@ -1,0 +1,17 @@
+{
+  "name": "safeharvest-ai-mvp",
+  "version": "1.0.0",
+  "description": "MVP SafeHarvest AI consumindo Open-Meteo para estimar risco de contaminação alimentar em regiões agrícolas.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
