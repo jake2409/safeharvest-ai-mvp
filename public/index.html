@@ -8,117 +8,28 @@
 </head>
 <body>
   <aside class="sidebar">
-    <div class="brand">
-      <div class="logo">🛡️</div>
-      <div>
-        <h1>SafeHarvest AI</h1>
-        <p>Risco de contaminação alimentar</p>
-      </div>
-    </div>
-
-    <nav>
-      <a class="active">Visão Geral</a>
-      <a>Mapa de Risco</a>
-      <a>Alertas</a>
-      <a>Análises</a>
-      <a>Relatórios</a>
-    </nav>
-
-    <div class="user">
-      <strong>Administrador</strong>
-      <span>Global Solution MVP</span>
-    </div>
+    <div class="brand"><div class="logo">🛡️</div><div><h1>SafeHarvest AI</h1><p>Food Safety powered by Space Data</p></div></div>
+    <nav><a href="#produto" class="active">Produto</a><a href="#problema">Problema e ODS</a><a href="#dashboard">Dashboard</a><a href="#api">API</a><a href="#equipe">Equipe</a></nav>
+    <div class="user"><strong>Global Solution</strong><span>Azure App Service MVP</span></div>
   </aside>
-
   <main>
-    <header class="topbar">
-      <div>
-        <h2>Visão Geral</h2>
-        <p>Dados climáticos em tempo real via Open-Meteo</p>
-      </div>
-
-      <button id="reloadButton">Atualizar</button>
-    </header>
-
-    <section class="cards">
-      <article class="card">
-        <span>Áreas monitoradas</span>
-        <strong id="totalAreas">--</strong>
-      </article>
-      <article class="card danger">
-        <span>Alto risco</span>
-        <strong id="highRisk">--</strong>
-      </article>
-      <article class="card warning">
-        <span>Médio risco</span>
-        <strong id="mediumRisk">--</strong>
-      </article>
-      <article class="card success">
-        <span>Baixo risco</span>
-        <strong id="lowRisk">--</strong>
-      </article>
+    <section id="produto" class="hero">
+      <div><span class="tag">Indústria Espacial + Cloud + IA</span><h2>SafeHarvest AI</h2><p>Plataforma web que utiliza dados climáticos, indicadores orbitais simulados e análise preditiva para identificar áreas agrícolas com risco de contaminação alimentar.</p><div class="hero-actions"><a href="#dashboard" class="button">Ver dashboard</a><a href="/api/regions" class="button secondary" target="_blank">Ver API</a></div></div>
+      <div class="hero-card"><strong>Propósito</strong><p>Apoiar produtores, distribuidores e órgãos reguladores na prevenção de contaminações antes que alimentos cheguem ao consumidor.</p></div>
     </section>
-
-    <section class="grid">
-      <article class="panel risk-gauge">
-        <h3>Índice Geral de Risco</h3>
-        <div class="gauge">
-          <div id="gaugeValue">--</div>
-          <span>/100</span>
-        </div>
-        <p id="gaugeText">Calculando...</p>
-      </article>
-
-      <article class="panel map-panel">
-        <div class="panel-header">
-          <h3>Mapa de Risco</h3>
-          <small>Representação visual do MVP</small>
-        </div>
-
-        <div id="riskMap" class="risk-map"></div>
-
-        <div class="legend">
-          <span><i class="dot high"></i> Alto</span>
-          <span><i class="dot medium"></i> Médio</span>
-          <span><i class="dot low"></i> Baixo</span>
-        </div>
-      </article>
-
-      <article class="panel">
-        <h3>Fatores de Risco</h3>
-        <div id="factors" class="factors"></div>
-      </article>
+    <section id="problema" class="info-grid">
+      <article class="panel"><h3>Problema espacial resolvido</h3><p>Grandes áreas agrícolas são difíceis de monitorar manualmente. A solução usa dados ambientais e sensoriamento remoto para observar sinais de risco em escala regional, como chuvas intensas, estresse da vegetação e possíveis impactos na água usada para irrigação.</p></article>
+      <article class="panel"><h3>ODS conectados</h3><div class="ods-list"><div><strong>ODS 2</strong><span>Fome Zero e Agricultura Sustentável</span></div><div><strong>ODS 3</strong><span>Saúde e Bem-Estar</span></div><div><strong>ODS 12</strong><span>Consumo e Produção Responsáveis</span></div></div></article>
+      <article class="panel"><h3>Funcionamento da solução</h3><ol class="flow"><li>Coleta de clima via Open-Meteo</li><li>Simulação de NDVI e turbidez</li><li>Cálculo do score de risco</li><li>Dashboard com alertas e regiões críticas</li></ol></article>
     </section>
-
-    <section class="bottom-grid">
-      <article class="panel">
-        <h3>Alertas</h3>
-        <div id="alerts" class="alerts"></div>
-      </article>
-
-      <article class="panel">
-        <h3>Regiões monitoradas</h3>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Região</th>
-                <th>Cultura</th>
-                <th>Temp.</th>
-                <th>Umidade</th>
-                <th>Chuva 7d</th>
-                <th>NDVI</th>
-                <th>Turbidez</th>
-                <th>Risco</th>
-              </tr>
-            </thead>
-            <tbody id="regionsTable"></tbody>
-          </table>
-        </div>
-      </article>
+    <section id="dashboard">
+      <header class="topbar"><div><h2>Dashboard de Risco</h2><p>Dados climáticos em tempo real via Open-Meteo</p></div><button id="reloadButton">Atualizar dados</button></header>
+      <section class="cards"><article class="card"><span>Áreas monitoradas</span><strong id="totalAreas">--</strong></article><article class="card danger"><span>Alto risco</span><strong id="highRisk">--</strong></article><article class="card warning"><span>Médio risco</span><strong id="mediumRisk">--</strong></article><article class="card success"><span>Baixo risco</span><strong id="lowRisk">--</strong></article></section>
+      <section class="grid"><article class="panel risk-gauge"><h3>Índice Geral de Risco</h3><div class="gauge"><div id="gaugeValue">--</div><span>/100</span></div><p id="gaugeText">Calculando...</p></article><article class="panel map-panel"><div class="panel-header"><h3>Mapa de Risco</h3><small>Representação visual do MVP</small></div><div id="riskMap" class="risk-map"></div><div class="legend"><span><i class="dot high"></i> Alto</span><span><i class="dot medium"></i> Médio</span><span><i class="dot low"></i> Baixo</span></div></article><article class="panel"><h3>Fatores de Risco</h3><div id="factors" class="factors"></div></article></section>
+      <section class="bottom-grid"><article class="panel"><h3>Alertas</h3><div id="alerts" class="alerts"></div></article><article class="panel"><h3>Regiões monitoradas</h3><div class="table-wrapper"><table><thead><tr><th>Região</th><th>Cultura</th><th>Temp.</th><th>Umidade</th><th>Chuva 7d</th><th>NDVI</th><th>Turbidez</th><th>Risco</th></tr></thead><tbody id="regionsTable"></tbody></table></div></article></section>
     </section>
+    <section id="api" class="info-grid api-section"><article class="panel"><h3>API documentada</h3><p>A aplicação também expõe endpoints públicos para demonstrar a camada de serviço.</p><code>GET /api/product</code><code>GET /api/health</code><code>GET /api/regions</code><code>GET /api/dashboard</code></article><article id="equipe" class="panel"><h3>Equipe</h3><p>Gabriel Xavier</p><p>Integrante 2</p><p>Integrante 3</p><p>Integrante 4</p></article></section>
   </main>
-
   <script src="./app.js"></script>
 </body>
 </html>
