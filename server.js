@@ -136,7 +136,11 @@ async function buildRegionRisk(region) {
 }
 
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', app: 'SafeHarvest AI MVP' });
+  console.log('API HEALTH ACESSADA:', new Date().toISOString());
+
+  res.json({
+      status: 'ok'
+  });
 });
 
 app.get('/api/regions', async (req, res) => {

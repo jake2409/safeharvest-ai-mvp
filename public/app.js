@@ -159,7 +159,7 @@ async function loadData() {
     `;
   } finally {
     reloadButton.disabled = false;
-    reloadButton.textContent = 'Atualizar dados';
+    reloadButton.textContent = 'Atualizar';
   }
 }
 
